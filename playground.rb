@@ -1,3 +1,4 @@
+my_details = {'name' => 'Brady', 'favcolor' => 'blue'}
 
 
 def multiply(first_number, second_number)
