@@ -1,0 +1,55 @@
+=begin
+  Ruby is case sensitive 
+  do not need to declare new variables
+  do execute a program in command line, type ruby "file name"
+=end
+
+if 5 > 3 #evaluates whther true
+  puts "true"
+elsif 5< 3
+   puts "false"
+ else
+  puts "I am here"
+end
+#unless can be used insted of if to evaluate wheter false
+=begin
+  This is a multiple line comment block
+  Some methods that can be applied to strings
+  .upcase
+  .downcase
+  .capitaize
+  .length
+  Remeber to use ! after the method to store the result back in the variable
+
+  .include? method will check if a string is included and evaluate to false
+  .gsub! will substitute a string of characters with another set
+
+  
+=end
+
+string_name = "brady"
+string_name.upcase!
+string_name.include?("B") #true
+puts string_name
+string_name.gsub!(/Y/, "ly")
+puts string_name
+i = 20
+  loop do
+		i -= 1
+    next if i % 2 == 1
+		puts "#{i}"
+		break if i <= 0
+	end
+=begin
+  #will execute and perform code inside loop while break statement is false
+	next keyword will skip over the statement
+		example next if i % 2 == 1 #will skip over if i is odd
+=end
+numbers_odd = [1, 3, 5, 7, 9]
+
+numbers_odd.each do |x|
+  x *= 2
+  puts x
+end
+
+30.times {puts "Brady"}
