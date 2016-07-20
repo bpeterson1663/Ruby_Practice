@@ -1,5 +1,5 @@
 =begin
-  Ruby is case sensitive 
+  Ruby is case sensitive
   do not need to declare new variables
   do execute a program in command line, type ruby "file name"
 =end
@@ -24,7 +24,7 @@ end
   .include? method will check if a string is included and evaluate to false
   .gsub! will substitute a string of characters with another set
 
-  
+
 =end
 
 string_name = "brady"
@@ -53,3 +53,16 @@ numbers_odd.each do |x|
 end
 
 30.times {puts "Brady"}
+
+=begin
+  hash's are key value pairs. Remeind me of objects. They act like arrays but instead of a number index we can call the index however we want
+=end
+my_hash = {
+  "cake" => "chocolate",
+  "pie" => "cherry",
+  "cookie" => "snickerdoodle"
+  }
+puts my_hash["cake"]
+my_hash.each do |x, y|
+  puts "We had #{y} #{x} for dessert"
+end
