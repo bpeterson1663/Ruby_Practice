@@ -66,3 +66,21 @@ puts my_hash["cake"]
 my_hash.each do |x, y|
   puts "We had #{y} #{x} for dessert"
 end
+
+
+def my_first_ruby_method
+    puts "First Mehtod"
+end
+
+def cubed_num(num)
+    puts num**3
+end
+
+my_first_ruby_method
+cubed_num(3)
+
+#SPLAT ARGUMENTS are preceded by a * which tells Ruby were not sure how many arguments will be received
+def print_names(*names)
+  names.each {|x| puts "#{x}"}
+end
+print_names("Brady", "Scott", "Steve", "Judy")
