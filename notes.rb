@@ -84,3 +84,13 @@ def print_names(*names)
   names.each {|x| puts "#{x}"}
 end
 print_names("Brady", "Scott", "Steve", "Judy")
+
+
+#Sorting arrays
+#Sort method will sort numerically and alpabetically 
+numbers_odd = [9,5,3,7,1,11]
+
+names_array = ["Brady", "Scott", "Steve", "Judy"]
+
+puts numbers_odd.sort!
+puts names_array.sort!
