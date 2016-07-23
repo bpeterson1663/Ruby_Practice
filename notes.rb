@@ -114,3 +114,33 @@ books = ["Charlie and the Chocolate Factory", "War and Peace", "A Wrinkle in Tim
 puts books.sort! {|firstBook, secondBook| firstBook<=>secondBook}
 #reverse order
 puts books.sort! {|firstBook, secondBook| secondBook<=>firstBook}
+#Ruby 1.9 does not use => when dealing with hashes. This has change to the :
+
+my_new_hash = {
+  cake: "chocolate",
+  pie: "cherry",
+  cookie: "snickerdoodle",
+  }
+
+puts my_new_hash[:cake]
+
+#Using the select method
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 3,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+
+top_movies = movie_ratings.select {|name, rating| rating >2}
+puts top_movies
+
+#printing just key or just values
+puts top_movies.each_key{|k| puts k}
+
+puts top_movies.each_value{|v| puts v}
