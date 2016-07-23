@@ -87,10 +87,25 @@ print_names("Brady", "Scott", "Steve", "Judy")
 
 
 #Sorting arrays
-#Sort method will sort numerically and alpabetically 
+#Sort method will sort numerically and alpabetically
 numbers_odd = [9,5,3,7,1,11]
 
 names_array = ["Brady", "Scott", "Steve", "Judy"]
 
 puts numbers_odd.sort!
 puts names_array.sort!
+
+
+#Combnied Comparison Operator
+#uses <=> to compare to objects 
+
+=begin
+ It returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second.
+=end
+
+book_1 = "A Wrinkle in Time"
+
+book_2 = "A Brief History of Time"
+
+puts book_1 <=> book_2
+
