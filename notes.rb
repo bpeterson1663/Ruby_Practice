@@ -97,7 +97,7 @@ puts names_array.sort!
 
 
 #Combnied Comparison Operator
-#uses <=> to compare to objects 
+#uses <=> to compare to objects
 
 =begin
  It returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second.
@@ -109,3 +109,8 @@ book_2 = "A Brief History of Time"
 
 puts book_1 <=> book_2
 
+books = ["Charlie and the Chocolate Factory", "War and Peace", "A Wrinkle in Time", "A Brief History of Time", "Utopia"]
+
+puts books.sort! {|firstBook, secondBook| firstBook<=>secondBook}
+#reverse order
+puts books.sort! {|firstBook, secondBook| secondBook<=>firstBook}
