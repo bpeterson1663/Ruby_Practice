@@ -144,3 +144,29 @@ puts top_movies
 puts top_movies.each_key{|k| puts k}
 
 puts top_movies.each_value{|v| puts v}
+
+
+movies = {
+    "The Rock" => 3
+}
+#Working on creating a basic movie rating system
+puts "What Action would you like to take?"
+choice = gets.chomp
+
+case choice
+    when "add"
+        puts "Enter the title of your movie"
+        title = gets.chomp
+        puts "Enter the rating"
+        rating = gets.chomp
+        movies[title.to_sym] = rating.to_i
+        puts "Your movie #{title} was entered"
+    when "update"
+        puts "Updated!"
+    when "display"
+        puts "Movies!"
+    when "delete"
+        puts "Deleted!"
+    else
+        puts "Error!"
+end
