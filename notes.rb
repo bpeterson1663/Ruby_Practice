@@ -167,10 +167,10 @@ case choice
         if movies[title.to_sym] == nil
             movies[title.to_sym] = rating.to_i
             puts "Your admovie #{title} was entered"
-        else 
+        else
             puts "That movie is already entered"
         end
-    when "update"   
+    when "update"
        puts "Enter the tile of the movie"
        title = gets.chomp
        if movies[title] == nil
@@ -194,3 +194,35 @@ case choice
     else
         puts "Error!"
 end
+
+=begin
+Using upto and downto methods
+works very similar to a for loop
+=end
+90.upto(100) { |num| puts num*2} #starts at 90 and prints upt to 100 while multiplying it by two
+
+100.downto(95) {|num| puts num} #starts at 100 and works down to 95
+
+"A".upto("K") {|x| puts x} #starts at the letter a and prints up to k alphabetically
+
+#using the shovel operator as a concantinator
+new_array_2 = [1,4,5,6]
+new_array_2 << 9 #will push 9 to the new_array_2
+puts new_array_2
+
+new_string = "Testing the shovel"
+new_string << " concantinator"
+puts new_string
+
+#using a ternary comparison instead of an if statement
+=begin
+before using ternary compairson
+  if 1 < 2
+    puts "One is less than two!"
+  else
+    puts "One is not less than two."
+  end
+=end
+
+#after 
+puts 1 < 2 ? "One is less than two!" : "One is not less than two."
