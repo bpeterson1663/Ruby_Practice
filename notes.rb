@@ -150,7 +150,12 @@ movies = {
     "The Rock" => 3
 }
 #Working on creating a basic movie rating system
+movies = {
+    "The Rock" => 3
+}
+
 puts "What Action would you like to take?"
+puts "Enter add, update, display, or delete"
 choice = gets.chomp
 
 case choice
@@ -159,14 +164,33 @@ case choice
         title = gets.chomp
         puts "Enter the rating"
         rating = gets.chomp
-        movies[title.to_sym] = rating.to_i
-        puts "Your movie #{title} was entered"
-    when "update"
-        puts "Updated!"
+        if movies[title.to_sym] == nil
+            movies[title.to_sym] = rating.to_i
+            puts "Your admovie #{title} was entered"
+        else 
+            puts "That movie is already entered"
+        end
+    when "update"   
+       puts "Enter the tile of the movie"
+       title = gets.chomp
+       if movies[title] == nil
+           puts "That movies does not exist"
+        else
+            puts "Enter a new rating"
+            rating = gets.chomp
+            movies[title.to_sym] == rating.to_i
+        end
     when "display"
-        puts "Movies!"
+        movies.each {|title, rating| puts "#{title}: #{rating}"}
     when "delete"
-        puts "Deleted!"
+        puts "What Title do you want to delete"
+        title = gets.chomp
+        if movies[title] == nil
+            puts "That movie does not exist"
+        else
+            movies.delete(title)
+            puts "That movie was deleted"
+        end
     else
         puts "Error!"
 end
