@@ -255,10 +255,10 @@ puts 1 < 2 ? "One is less than two!" : "One is not less than two."
           end
 
           first_n_primes(10)
-
 =end
 
 #And refactored
+=begin
 require 'prime'
 
 def first_n_primes(n)
@@ -272,3 +272,12 @@ def first_n_primes(n)
 end
 
 first_n_primes(10)
+=end
+
+#collection
+=begin
+The collect method takes a block and applies the expression in the block to every element in an array
+=end
+fibs = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+#doubles the numbers in fib
+doubled_fibs= fibs.collect { |num| num*2 }
