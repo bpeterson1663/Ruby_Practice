@@ -281,3 +281,13 @@ The collect method takes a block and applies the expression in the block to ever
 fibs = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 #doubles the numbers in fib
 doubled_fibs= fibs.collect { |num| num*2 }
+#working with yields 
+def yield_name(name)
+  puts "Let's start learning yield."
+  yield("Kim") #prints out "My name is Kim"
+  puts "In between the yields!"
+  yield(name) #prints out "My name is "+name
+  puts "Block complete! Back in the method."
+end
+
+yield_name("Brady") { |n| puts "My name is #{n}."}
