@@ -291,3 +291,20 @@ def yield_name(name)
 end
 
 yield_name("Brady") { |n| puts "My name is #{n}."}
+
+#Working with Procs
+group_1 = [4.1, 5.5, 3.2, 3.3, 6.1, 3.9, 4.7]
+group_2 = [7.0, 3.8, 6.2, 6.1, 4.4, 4.9, 3.0]
+group_3 = [5.5, 5.1, 3.9, 4.3, 4.9, 3.2, 3.2]
+
+#Creates new proc that when used returns number greater or equal to 4
+over_4_feet = Proc.new { |x| x >= 4}
+
+#calls the proc on the arrays and selects the numbers four and greater
+can_ride_1 = group_1.select(&over_4_feet)
+can_ride_2 = group_2.select(&over_4_feet)
+can_ride_3 = group_3.select(&over_4_feet)
+
+puts "Can Ride 1 #{can_ride_1}"
+puts "Can Ride 2 #{can_ride_2}"
+puts "Can Ride 3 #{can_ride_3}"
