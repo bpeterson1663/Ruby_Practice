@@ -281,7 +281,7 @@ The collect method takes a block and applies the expression in the block to ever
 fibs = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 #doubles the numbers in fib
 doubled_fibs= fibs.collect { |num| num*2 }
-#working with yields 
+#working with yields
 def yield_name(name)
   puts "Let's start learning yield."
   yield("Kim") #prints out "My name is Kim"
@@ -308,3 +308,15 @@ can_ride_3 = group_3.select(&over_4_feet)
 puts "Can Ride 1 #{can_ride_1}"
 puts "Can Ride 2 #{can_ride_2}"
 puts "Can Ride 3 #{can_ride_3}"
+
+#calling procs
+hi = Proc.new { puts "Hello!"}
+
+hi.call #puts "Hello!"
+
+
+numbers_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+strings_array = numbers_array.map(&:to_s)
+
+puts strings_array
