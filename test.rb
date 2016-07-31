@@ -32,7 +32,7 @@ elsif prompt == "3"
   puts "You have chosen to subtract #{first_number} with #{second_number}"
   result = subtract(first_number, second_number)
 elsif prompt == "4"
-  puts "You hae chosen to find the remainder #{first_number} with #{second_number}"
+  puts "You have chosen to find the remainder #{first_number} with #{second_number}"
   result = mod(first_number, second_number)
 else
   puts "You have made an invalid choice"

@@ -157,6 +157,7 @@ movies = {
 puts "What Action would you like to take?"
 puts "Enter add, update, display, or delete"
 choice = gets.chomp
+choice.downcase!
 
 case choice
     when "add"
@@ -227,8 +228,6 @@ before using ternary compairson
 #after
 puts 1 < 2 ? "One is less than two!" : "One is not less than two."
 
-
-
 =begin
   Working on practicing some of Ruby shorthand hand refactoring code
   Here is a chunk of code I was given to refactor
@@ -284,7 +283,7 @@ doubled_fibs= fibs.collect { |num| num*2 }
 #working with yields
 def yield_name(name)
   puts "Let's start learning yield."
-  yield("Kim") #prints out "My name is Kim"
+  yield("Brady") #prints out "My name is Brady"
   puts "In between the yields!"
   yield(name) #prints out "My name is "+name
   puts "Block complete! Back in the method."
@@ -293,7 +292,7 @@ end
 yield_name("Brady") { |n| puts "My name is #{n}."}
 
 #Working with Procs
-group_1 = [4.1, 5.5, 3.2, 3.3, 6.1, 3.9, 4.7]
+group_1 = [4.1, 5.5, 3.2, 2.3, 6.1, 9.3, 4.7]
 group_2 = [7.0, 3.8, 6.2, 6.1, 4.4, 4.9, 3.0]
 group_3 = [5.5, 5.1, 3.9, 4.3, 4.9, 3.2, 3.2]
 
@@ -313,9 +312,7 @@ puts "Can Ride 3 #{can_ride_3}"
 hi = Proc.new { puts "Hello!"}
 
 hi.call #puts "Hello!"
-
-
-numbers_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numbers_array = [1, 2, 11, 4, 20, 6, 7, 8, 9, 10]
 
 strings_array = numbers_array.map(&:to_s)
 
