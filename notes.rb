@@ -323,5 +323,20 @@ strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
 #turning this array of strings into symbols
 symbolize = lambda { |num| num.to_sym }
 
-# Write your code above this line!
 symbols = strings.collect(&symbolize)
+puts symbols
+
+=begin
+  DIFFERENCES BETWEEN A LAMBDA AND PROC
+  First, a lambda checks the number of arguments passed to it, while a proc does not. This means that a lambda will throw an error if you pass it the wrong number of arguments, whereas a proc will ignore unexpected arguments and assign nil to any that are missing.
+
+Second, when a lambda returns, it passes control back to the calling method; when a proc returns, it does so immediately, without going back to the calling method.
+=end
+
+my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+#checks if any of the value of my_array is a symbol
+symbol_filter = lambda {|sym| sym.is_a? Symbol}
+
+symbols = my_array.select(&symbol_filter)
+
+puts symbols
