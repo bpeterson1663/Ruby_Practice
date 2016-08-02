@@ -317,3 +317,11 @@ numbers_array = [1, 2, 11, 4, 20, 6, 7, 8, 9, 10]
 strings_array = numbers_array.map(&:to_s)
 
 puts strings_array
+
+#LAMBDAS
+strings = ["leonardo", "donatello", "raphael", "michaelangelo"]
+#turning this array of strings into symbols
+symbolize = lambda { |num| num.to_sym }
+
+# Write your code above this line!
+symbols = strings.collect(&symbolize)
