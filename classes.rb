@@ -77,3 +77,34 @@ end
 
 my_computer = Computer.new("bpeterson1663", "password")
 my_computer.create("Journal.doc")
+
+#WORKING WITH PRIVATE AND PUBLIC METHODS
+#METHODS ARE PUBLIC BY DEFAULT
+#WORKIGN WITH attr_reader and attr_writer
+
+class Person
+    attr_reader :name
+    attr_writer :job
+    
+  def initialize(name, job)
+    @name = name
+    @job = job
+  end
+  
+end
+
+=begin
+  Code above is essentially this. It removes the name and job methods
+  def initialize(name, job)
+    @name = name
+    @job = job
+  end
+  
+  def name
+    @name
+  end
+  
+  def job=(new_job)
+    @job = new_job
+  end
+=end
