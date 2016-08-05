@@ -55,3 +55,26 @@ class Email < Message
     end
 end
 
+class Computer
+    @@users = {}
+   def initialize(username, password)
+       @username = username
+       @password = password
+       @files = {}
+       @@users[username] = password
+   end
+
+   def create(filename)
+      time = Time.now
+      @files[filename] = time
+      puts "New File Was Created"
+   end
+
+   def Computer.get_users
+      return @@users
+   end
+end
+
+my_computer = Computer.new("bpeterson1663", "password")
+my_computer.create("Journal.doc")
+puts my_computer
