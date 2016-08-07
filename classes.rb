@@ -85,12 +85,13 @@ my_computer.create("Journal.doc")
 class Person
     attr_reader :name
     attr_writer :job
-    
-  def initialize(name, job)
+    attr_accessor :age #both readable and writable
+
+  def initialize(name, job, age)
     @name = name
     @job = job
   end
-  
+
 end
 
 =begin
@@ -99,12 +100,20 @@ end
     @name = name
     @job = job
   end
-  
+
   def name
     @name
   end
-  
+
   def job=(new_job)
     @job = new_job
   end
 =end
+
+#prints out PI
+puts "PI is #{Math::PI}"
+
+#working with require 
+require "date" #this is ruby specific
+
+puts Date.today
