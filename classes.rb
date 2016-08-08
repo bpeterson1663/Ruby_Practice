@@ -139,3 +139,15 @@ class Samurai
     @shogun = shogun
   end
 end
+
+module ThePresent
+  def now
+    puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12 : Time.new.hour}:#{Time.new.min} #{Time.new.hour > 12 ? 'PM' : 'AM'} (GMT)."
+  end
+end
+
+class TheHereAnd
+  extend ThePresent #allows TheHereAnd method to use ThePresent
+end
+
+TheHereAnd.now
