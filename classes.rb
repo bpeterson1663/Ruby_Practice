@@ -117,3 +117,25 @@ puts "PI is #{Math::PI}"
 require "date" #this is ruby specific
 
 puts "Date is: #{Date.today}"
+
+#we can also use include so we dont have to use ::
+
+module MartialArts
+    def swordsman
+       puts "I'm a swordsman."
+    end
+end
+
+class Ninja
+  include MartialArts
+  def initialize(clan)
+    @clan = clan
+  end
+end
+
+class Samurai
+  include MartialArts
+  def initialize(shogun)
+    @shogun = shogun
+  end
+end
