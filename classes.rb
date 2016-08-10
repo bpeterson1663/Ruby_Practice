@@ -184,12 +184,36 @@ class Account
    public
    def withdraw(pin_number, amount)
        if pin_number == pin
-           @balance -= amount
+         if amount > @balance
+           puts "You do not have enough in your account"
+         elsif @balance -= amount
            puts "Withdrew #{amount}. New balance: $#{@balance}."
+         end
        else
            pin_error
        end
     end
+
+    public
+    def deposit(pin_number, amount)
+      if pin_number == pin
+        @balance -= amount
+        puts "Deposited #{amount}. New balance: $#{@balance}"
+      end
+    end
 end
 
 checking_account = Account.new("Brady", 10000000)
+puts checking_account
+
+puts checking_account.withdraw(1245, 2000)
+puts checking_account.withdraw(1234, 2000)
+
+puts checking_account.display_balance(1234)
+
+puts checking_account.withdraw(1234, 900000)
+
+puts checking_account.deposit(1234, 6000)
+
+puts checking_account.withdraw(1234, 9000000)
+puts checking_account.withdraw(1234, 9000000)
