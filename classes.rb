@@ -113,7 +113,7 @@ end
 #prints out PI
 puts "PI is #{Math::PI}"
 
-#working with require 
+#working with require
 require "date" #this is ruby specific
 
-puts Date.today
+puts "Todays Date is #{Date.today}"
