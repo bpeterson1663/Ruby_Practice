@@ -116,4 +116,105 @@ puts "PI is #{Math::PI}"
 #working with require
 require "date" #this is ruby specific
 
-puts "Todays Date is #{Date.today}"
+puts "Date is: #{Date.today}"
+
+#we can also use include so we dont have to use ::
+
+module MartialArts
+    def swordsman
+       puts "I'm a swordsman."
+    end
+end
+
+class Ninja
+  include MartialArts
+  def initialize(clan)
+    @clan = clan
+  end
+end
+
+class Samurai
+  include MartialArts
+  def initialize(shogun)
+    @shogun = shogun
+  end
+end
+
+module ThePresent
+  def now
+    puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12 : Time.new.hour}:#{Time.new.min} #{Time.new.hour > 12 ? 'PM' : 'AM'} (GMT)."
+  end
+end
+
+class TheHereAnd
+  extend ThePresent #allows TheHereAnd method to use ThePresent
+end
+
+TheHereAnd.now
+
+
+class Account
+   attr_reader :name
+   attr_reader :balance
+
+   def initialize(name, balance=100)
+      @name = name
+      @balance = balance
+   end
+
+   private
+   def pin
+        @pin = 1234
+   end
+
+   private
+   def pin_error
+      "Access denied: incorrect PIN."
+   end
+
+   public
+   def display_balance(pin_number)
+      if pin_number == pin
+         puts "Balance: $#{balance}."
+      else
+          puts pin_error
+      end
+   end
+
+   public
+   def withdraw(pin_number, amount)
+       if pin_number == pin
+         if amount > @balance
+           puts "You do not have enough in your account"
+         elsif @balance -= amount
+           puts "Withdrew #{amount}. New balance: $#{@balance}."
+         end
+       else
+           pin_error
+       end
+    end
+
+    public
+    def deposit(pin_number, amount)
+      if pin_number == pin
+        @balance -= amount
+        puts "Deposited #{amount}. New balance: $#{@balance}"
+      end
+    end
+end
+
+checking_account = Account.new("Brady", 10000000)
+puts checking_account
+
+puts checking_account.withdraw(1245, 2000)
+puts checking_account.withdraw(1234, 2000)
+
+puts checking_account.display_balance(1234)
+
+puts checking_account.withdraw(1234, 900000)
+
+puts checking_account.deposit(1234, 6000)
+
+puts checking_account.withdraw(1234, 9000000)
+puts checking_account.withdraw(1234, 9000000)
+>>>>>>> 236103b7f3bda1e0ad32c6cc9587e770ff1a9603
