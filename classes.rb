@@ -222,3 +222,4 @@ puts checking_account.deposit(1234, 6000)
 
 puts checking_account.withdraw(1234, 9000000)
 puts checking_account.withdraw(1234, 9000000)
+>>>>>>> 236103b7f3bda1e0ad32c6cc9587e770ff1a9603
