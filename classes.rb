@@ -1,13 +1,19 @@
 #CLASSES
 #@ symbol creates an instance of that variable. Very similar to "this" in javascript
 class Person
+  @@name= ""
     def initialize(name)
         @name = name
+        @@name = name
+    end
+    def name
+        puts "HELLO!"
+        return @@name
     end
 end
 
 brady = Person.new("Brady") #creates a new person variable passing in "Brady" into the initialize method
-puts "Brady object is #{brady}"
+puts "Brady object is #{brady.name}"
 #working with class variables
 
 class Person
@@ -26,7 +32,7 @@ matz = Person.new("Yukihiro")
 dhh = Person.new("David")
 
 puts "Number of Person instances: #{Person.number_of_instances}" #outputs 2
-
+puts "number of people testing: #{dhh}"
 #Working with inheritance
 class ApplicationError
   def display_error
@@ -151,7 +157,6 @@ class TheHereAnd
 end
 
 TheHereAnd.now
-
 
 class Account
    attr_reader :name
